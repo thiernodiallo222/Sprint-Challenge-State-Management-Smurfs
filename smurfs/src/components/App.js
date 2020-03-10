@@ -1,39 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
-import { Provider, connect } from 'react-redux';
-import { getData } from './actions/index';
-import { state } from '../reducers/reducer'
+import ElementList from './ElementList';
+
 
 
 const App = (props) => {
   return (
-    <div>
+    <div className ="App">
         <ElementList
-          getData={props.getData}
-          isFetching={props.isFetching}
-          error={props.error}
-          smurfs={props.smurfs}
-          isFetched={props.isFetched} />
-        
+         getSmurfs={ props.getSmurfs }
+          isFetching={ props.isFetching }
+          error={ props.error }
+          smurfs={ props.smurfs }
+          isFetched={ props.isFetched} />     
     </div>
   )
 }
 
-export default App
+// const mapStateToProps = (state) => {
+//   return {
+//     isFetching: state.isFetching,
+//     error: state.error,
+//     smurfs: state.smurfs,
+//     isFetched: state.isFetched
+//   }
+// }
 
-
-
-const mapStateToProps = (state) => {
-  return {
-    isFetching: state.isFetching,
-    error: state.error,
-    smurfs: state.smurfs,
-    isFetched: state.isFetched
-  }
-}
-const mapDispatchToProps = {
-  //just return list of action creators here.
-  getData
-}
-
-export default connect (mapStateToProps, mapDispatchToProps)(App);
+export default App;

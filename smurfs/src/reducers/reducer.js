@@ -1,6 +1,6 @@
-import { FETCHING_START, FETCHING_SUCCESS, FETCHING_FAILUREM } from '../components/actions/index';
+import { FETCHING_START, FETCHING_SUCCESS } from '../components/actions/index';
 
-const initialState = {
+export const initialState = {
     isFetching: false,
     error: '',
     smurfs: [],
@@ -19,7 +19,8 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-          smurfs: [...state.smurfs, ation.payload],
+        smurfs: [...state.smurfs,
+        ...action.payload],
         isFetched: true
       };
     default:
