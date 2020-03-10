@@ -1,9 +1,5 @@
-.smurf-list{
-width: 600px;
-margin-left: auto;
-display: flex;
-justify-content: center;
-align-items: center;
+.smurf-card{
+
 background: whitesmoke;
 }
 
@@ -17,7 +13,8 @@ p{
 }
 
 .button{
-    width: 100px;
+    width: 200px;
+    height: 40px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -28,4 +25,31 @@ p{
     background: black;
     border-radius: 45px;
 
+}
+.add-and-retrieve{
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+.add-button{
+    width: 200px;
+    height: 40px;
+    background: black;
+    color: white;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: black;
+    border-radius: 45px;
+
+}
+.input-form{
+    width: 400px;
+    height: 40px; 
 }

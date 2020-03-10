@@ -1,0 +1,66 @@
+import React, { useState } from 'react'
+import { connect } from 'react-redux';
+import { AddSmurf } from './actions/index';
+import AddButton from './AddButton';
+import './Style.css';
+
+
+
+  
+const AddData = (props) => {
+
+    const [user, setUser] = useState({ name: "", age: "", height: "" });
+
+    const handleChange = event => {
+        event.preventDefault();
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+    return (
+        <div className="add-and-retrieve">
+            <AddButton AddSmurf={props.AddSmurf} user={user} /> 
+            <div>
+                <form >
+       
+                    <input className="input-form"
+                        type="text" name="name"
+                        placeholder="NAME"
+                        value={user.name}
+                        onChange={event => handleChange(event)} />
+           
+                
+       
+         
+                    <input className="input-form"
+                        type="text" name="age" value={user.age}
+                        placeholder="AGE"
+                        onChange={event => handleChange(event)} />             
+            
+            
+      
+                    <input className="input-form" type="text"
+                        name="height" value={user.height}
+                        placeholder="HEIGHT"
+                        onChange={event => handleChange(event)} />
+                    
+        </form> 
+            </div>
+            
+        
+      </div>  
+    )
+}
+
+const mapStateToProps = state => {
+    return {
+    name: state.name,
+    age: state.age,
+    height: state.height
+    }
+}
+//  const mapDispatchToProps = {
+//     AddSmurf
+//     }
+
+export default connect(mapStateToProps, { AddSmurf })(AddData);
+

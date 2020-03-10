@@ -1,10 +1,10 @@
-import { FETCHING_START, FETCHING_SUCCESS } from '../components/actions/index';
+import { FETCHING_START, FETCHING_SUCCESS, ADDING_DATA } from '../components/actions/index';
 
 export const initialState = {
     isFetching: false,
     error: '',
     smurfs: [],
-    isFetched: false
+  isFetched: false,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -23,6 +23,11 @@ export const reducer = (state = initialState, action) => {
         ...action.payload],
         isFetched: true
       };
+     case ADDING_DATA:
+      return {
+        ...state,
+        smurfs: [...state.smurfs, action.payload]
+      }
     default:
       return state;
   }
