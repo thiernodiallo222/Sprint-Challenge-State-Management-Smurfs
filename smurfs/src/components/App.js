@@ -18,8 +18,3 @@ const App = (props) => {
 export default App;
 
 
-// / getSmurfs={ props.getSmurfs }
-        //   isFetching={ props.isFetching }
-        //   error={ props.error }
-        //   smurfs={ props.smurfs }
-        // isFetched={props.isFetched}

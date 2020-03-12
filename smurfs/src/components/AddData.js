@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { AddSmurf } from './actions/index';
-// import AddButton from './AddButton';
 import './Style.css';
 
 

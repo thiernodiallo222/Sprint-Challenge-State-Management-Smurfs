@@ -1,19 +1,11 @@
-import { FETCHING_START, FETCHING_SUCCESS, ADDING_DATA, FETCHING_FAILURE } from '../components/actions/index';
+import { FETCHING_START, FETCHING_SUCCESS, FETCHING_FAILURE } from '../components/actions/index';
 
-export const initialState = {
-    isFetching: false,
-    error: '',
-  smurfs: [
-    
-  {
-    name: "Brainey",
-    age: 200,
-    height: "5cm",
-    id: 0
-  }
-  ],
+const initialState = {
+  isFetching: false,
+  error: '',
+  smurfs:[],
   isFetched: false,
-}
+};
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
