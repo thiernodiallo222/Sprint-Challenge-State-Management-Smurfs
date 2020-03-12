@@ -5,6 +5,7 @@ import { getSmurfs } from './actions/index';
 import './Style.css';
 
 const ElementList = (props) => {
+  console.log(props);
 
     if (props.isFetching) {
         return <h3>Smurf is fetching ... :)</h3>

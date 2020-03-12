@@ -1,9 +1,17 @@
-import { FETCHING_START, FETCHING_SUCCESS, ADDING_DATA } from '../components/actions/index';
+import { FETCHING_START, FETCHING_SUCCESS, ADDING_DATA, FETCHING_FAILURE } from '../components/actions/index';
 
 export const initialState = {
     isFetching: false,
     error: '',
-    smurfs: [],
+  smurfs: [
+    
+  {
+    name: "Brainey",
+    age: 200,
+    height: "5cm",
+    id: 0
+  }
+  ],
   isFetched: false,
 }
 
@@ -19,16 +27,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        smurfs: [...state.smurfs,
-        ...action.payload],
+        smurfs: action.payload,
         isFetched: true
-      };
-     case ADDING_DATA:
+      }
+    case FETCHING_FAILURE:
       return {
         ...state,
-        smurfs: [...state.smurfs, action.payload]
+        error: action.payload
       }
-    default:
-      return state;
   }
 };

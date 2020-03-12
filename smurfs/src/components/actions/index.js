@@ -3,7 +3,9 @@ import axios from "axios";
 export const FETCHING_START = "FETCHING_START";
 export const FETCHING_SUCCESS = "FETCHING_SUCCESS";
 export const FETCHING_FAILURE = "FETCHING_FAILURE";
-export const ADDING_DATA = "ADDING_DATA";
+export const ADDING_DATA_START = "ADDING_DATA_START";
+export const ADDING_DATA_SUCCESS = "ADDING_DATA_SUCCESS";
+export const ADDING_FAILURE = "ADDING_FAILURE";
 
 export const getSmurfs = () => dispatch => {
     dispatch({ type: FETCHING_START });
@@ -20,20 +22,22 @@ export const getSmurfs = () => dispatch => {
             console.log("err", err);
             dispatch({
                 type: FETCHING_FAILURE,
-                payload: `error, failed to fetch`
+                payload: err
             });
         })
 };
 
 export const AddSmurf = (newSmurf) => dispatch => {
-    dispatch({ type: ADDING_DATA })
+    dispatch({ type: ADDING_DATA_START })
     axios
         .post("http://localhost:3333/smurfs", newSmurf)
         .then((response) => {
-        console.log(newSmurf);
-  console.log(response)
+            console.log(newSmurf);
+            dispatch({type: ADDING_DATA_SUCCESS, payload: newSmurf})
+      console.log(response)
         })
         .catch(err => {
+            dispatch({type: ADDING_FAILURE, payload: err})
             console.log(`an error occurred !`);
         });   
 }

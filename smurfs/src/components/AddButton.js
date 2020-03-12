@@ -1,13 +1,13 @@
-import React from 'react'
-import './Style.css';
+// import React from 'react'
+// import './Style.css';
 
 
-const AddButton = (props) => {
-    return (
-        <div> 
-            <button className="add-button" onClick={() => props.AddSmurf(props.user)}>Add New Sturf </button>
-        </div>
-    )
-}
+// const AddButton = (props) => {
+//     return (
+//         <div> 
+//             <button>Add New Sturf </button>
+//         </div>
+//     )
+// }
 
-export default AddButton;
+// export default AddButton;
