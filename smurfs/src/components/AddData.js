@@ -45,7 +45,7 @@ const AddData = (props) => {
                     
         </form> 
             </div>
-        <AddButton AddSmurf={props.AddSmurf} user={user} /> 
+         <button className="add-button" onClick={() => AddSmurf(user)}>Add New Sturf </button>
       </div>  
     )
 }

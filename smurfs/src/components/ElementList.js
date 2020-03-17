@@ -34,18 +34,14 @@ const mapStateToProps = (state) => {
     isFetching: state.isFetching,
     error: state.error,
     smurfs: state.smurfs,
-<<<<<<< HEAD
     isFetched: state.isFetched,
     name: state.smurfs.name,
     age: state.smurfs.age,
     height: state.smurfs.height
   
-}   
-=======
-    isFetched: state.isFetched
->>>>>>> a5fb833e3bcfd14f28aea112e9dcdb7253c11b51
-  };
+  }
 };
+
   
 const mapDispatchToProps = {
   //just return list of action creators here.
