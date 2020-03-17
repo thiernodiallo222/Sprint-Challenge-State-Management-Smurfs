@@ -19,8 +19,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        smurfs: [...state.smurfs,
-        action.payload],
+        smurfs: action.payload,
         isFetched: true
       };
     case ADDING_DATA_START:
@@ -31,8 +30,7 @@ export const reducer = (state = initialState, action) => {
      case ADDING_DATA_SUCCESS:
       return {
         ...state,
-        smurfs: [...state.smurfs,
-                action.payload]
+        smurfs: action.payload
       }
     case ADDING_DATA_FAILURE:
       return {

@@ -36,7 +36,7 @@ export const AddSmurf = newSmurf => dispatch => {
             console.log(response)
             dispatch({
                 type: ADDING_DATA_SUCCESS,
-                payload: newSmurf
+                payload: response.data
             })
             console.log(newSmurf);
             console.log(response)

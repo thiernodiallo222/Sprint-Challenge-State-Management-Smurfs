@@ -19,7 +19,7 @@ const AddData = (props) => {
         <div className="add-and-retrieve">
       
             <div>
-                <form onSubmit={() => props.AddSmurf(user)} >
+                <form >
                     
        
                     <input className="input-form"
@@ -45,7 +45,7 @@ const AddData = (props) => {
                     
         </form> 
             </div>
-         <button className="add-button" onClick={() => AddSmurf(user)}>Add New Sturf </button>
+            <button className="add-button" onClick={() => props.AddSmurf(user)}>Add New Sturf </button>
       </div>  
     )
 }

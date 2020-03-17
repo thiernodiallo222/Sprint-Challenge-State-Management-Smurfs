@@ -3,7 +3,7 @@ import ElementCard from './ElementCard';
 import { connect } from 'react-redux';
 import { getSmurfs, AddSmurf } from './actions/index';
 import './Style.css';
-import { state } from '.././reducers/reducer';
+// import { state } from '.././reducers/reducer';
 
 const ElementList = ({isFetching, error, smurfs, isFetched, getSmurfs}) => {
   // console.log(props);
