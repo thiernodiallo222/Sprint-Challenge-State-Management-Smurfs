@@ -1,3 +1,16 @@
-.App {
-  text-align: center;
+.App{
+  width: 800px;
+  margin-left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elements{
+  width: 350px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
