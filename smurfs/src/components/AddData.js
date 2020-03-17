@@ -26,7 +26,7 @@ const AddData = (props) => {
                         type="text" name="name"
                         placeholder="NAME"
                         value={user.name}
-                        onChange={event => handleChange(event)} />
+                        onChange={handleChange} />
            
                 
        
@@ -34,14 +34,14 @@ const AddData = (props) => {
                     <input className="input-form"
                         type="text" name="age" value={user.age}
                         placeholder="AGE"
-                        onChange={event => handleChange(event)} />             
+                        onChange={handleChange} />             
             
             
       
                     <input className="input-form" type="text"
                         name="height" value={user.height}
                         placeholder="HEIGHT"
-                        onChange={event => handleChange(event)} />
+                        onChange={handleChange} />
                     
         </form> 
             </div>
@@ -52,15 +52,11 @@ const AddData = (props) => {
 }
 
 const mapStateToProps = state => {
-    return {
-    name: state.name,
-    age: state.age,
-    height: state.height
-    }
+    return { state }
 }
-//  const mapDispatchToProps = {
-//     AddSmurf
-//     }
+const mapDispatchToProps = {
+    AddSmurf
+};
 
-export default connect(mapStateToProps, { AddSmurf })(AddData);
+export default connect(mapStateToProps, mapDispatchToProps)(AddData);
 
