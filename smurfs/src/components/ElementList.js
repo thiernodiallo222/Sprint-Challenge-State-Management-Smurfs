@@ -9,7 +9,7 @@ const ElementList = ({isFetching, error, smurfs, isFetched, getSmurfs}) => {
   // console.log(props);
 
   if (isFetching) {
-    return <h3>Smurf is fetching ... :)</h3>
+    return <h3>Smurf is fetching ... </h3>
   } else if (error) {
     return <h3>{error}</h3>
   } else {

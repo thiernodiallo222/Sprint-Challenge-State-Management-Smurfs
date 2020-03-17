@@ -34,12 +34,12 @@ export const AddSmurf = newSmurf => dispatch => {
         .post("http://localhost:3333/smurfs", newSmurf)
         .then((response) => {
             console.log(response)
-            // dispatch({
-            //     type: ADDING_DATA_SUCCESS,
-            //     payload: newSmurf
-            // })
-            // console.log(newSmurf);
-            // console.log(response)
+            dispatch({
+                type: ADDING_DATA_SUCCESS,
+                payload: newSmurf
+            })
+            console.log(newSmurf);
+            console.log(response)
         })
         .catch(err => {
             dispatch({
