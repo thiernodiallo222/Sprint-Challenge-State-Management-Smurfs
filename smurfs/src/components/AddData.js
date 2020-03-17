@@ -18,7 +18,7 @@ const AddData = (props) => {
 
     return (
         <div className="add-and-retrieve">
-            <AddButton AddSmurf={props.AddSmurf} user={user} /> 
+      
             <div>
                 <form >
        
@@ -45,8 +45,7 @@ const AddData = (props) => {
                     
         </form> 
             </div>
-            
-        
+        <AddButton AddSmurf={props.AddSmurf} user={user} /> 
       </div>  
     )
 }

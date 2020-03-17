@@ -45,9 +45,9 @@ const mapStateToProps = state => {
     error:state.error,
     smurfs: state.smurfs,
     isFetched: state.isFetched,
-    // name: state.smurfs.name,
-    // age: state.smurfs.age,
-    // height: state.smurfs.height
+    name: state.smurfs.name,
+    age: state.smurfs.age,
+    height: state.smurfs.height
   
 }   
   };

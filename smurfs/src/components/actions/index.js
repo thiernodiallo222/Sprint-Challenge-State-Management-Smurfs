@@ -34,15 +34,15 @@ export const AddSmurf = newSmurf => dispatch => {
     axios
         .post("http://localhost:3333/smurfs", newSmurf)
         .then((response) => {
-            dispatch({
-                type: ADDING_DATA_SUCCESS,
-                payload: newSmurf
-            })
-            console.log(newSmurf);
             console.log(response)
+            // dispatch({
+            //     type: ADDING_DATA_SUCCESS,
+            //     payload: newSmurf
+            // })
+            // console.log(newSmurf);
+            // console.log(response)
         })
         .catch(err => {
-            // console.log(`an error occurred !`);
             dispatch({
                 type: ADDING_DATA_FAILURE,
                 payload: 'Error to add Data'

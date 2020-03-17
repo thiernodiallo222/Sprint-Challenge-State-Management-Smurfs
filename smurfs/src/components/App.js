@@ -10,7 +10,6 @@ const App = (props) => {
     <div className="app">
       <AddData className ="elements"/>
       <ElementList className ="elements" />    
-      
     </div>
   )
 }
