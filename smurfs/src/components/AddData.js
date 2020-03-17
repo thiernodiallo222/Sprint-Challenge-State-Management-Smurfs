@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { AddSmurf } from './actions/index';
-import AddButton from './AddButton';
 import './Style.css';
 
 
@@ -18,15 +17,25 @@ const AddData = (props) => {
 
     return (
         <div className="add-and-retrieve">
+<<<<<<< HEAD
       
+=======
+            {/* <AddButton AddSmurf={props.AddSmurf} user={user} />  */}
+         
+>>>>>>> a5fb833e3bcfd14f28aea112e9dcdb7253c11b51
             <div>
-                <form >
+                <form onSubmit={() => props.AddSmurf(user)} >
+                    
        
                     <input className="input-form"
                         type="text" name="name"
                         placeholder="NAME"
                         value={user.name}
+<<<<<<< HEAD
                         onChange={handleChange} />
+=======
+                       onChange={handleChange} />
+>>>>>>> a5fb833e3bcfd14f28aea112e9dcdb7253c11b51
            
                 
        
@@ -42,6 +51,10 @@ const AddData = (props) => {
                         name="height" value={user.height}
                         placeholder="HEIGHT"
                         onChange={handleChange} />
+<<<<<<< HEAD
+=======
+                       <button type="submit">Submit</button>
+>>>>>>> a5fb833e3bcfd14f28aea112e9dcdb7253c11b51
                     
         </form> 
             </div>
@@ -51,7 +64,11 @@ const AddData = (props) => {
 }
 
 const mapStateToProps = state => {
+<<<<<<< HEAD
     return { state }
+=======
+    return {state}
+>>>>>>> a5fb833e3bcfd14f28aea112e9dcdb7253c11b51
 }
 const mapDispatchToProps = {
     AddSmurf

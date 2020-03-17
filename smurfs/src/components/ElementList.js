@@ -1,56 +1,57 @@
 import React from 'react'
 import ElementCard from './ElementCard';
 import { connect } from 'react-redux';
-import { getSmurfs } from './actions/index';
+import { getSmurfs, AddSmurf } from './actions/index';
 import './Style.css';
+import { state } from '.././reducers/reducer';
 
-const ElementList = (props) => {
+const ElementList = ({isFetching, error, smurfs, isFetched, getSmurfs}) => {
+  // console.log(props);
 
-    if (props.isFetching) {
-        return <h3>Smurf is fetching ... :)</h3>
-    } else if (props.error) {
-        return <h3>{props.error}</h3>
-    } else {
-        return  <div>
-        <button className ="button" onClick={()=>props.getSmurfs()}>GET SMURF </button>
-
-            <div>
-    {
-        props.smurfs.map((element, index) =>
-            <ElementCard
-                    id={index}
-                    isFetching={props.isFetching}
-                    error={props.error}
-                   isFetched={props.isFetched}
-                    smurfs={props.smurfs}
-                    // name={element.name}
-                    // age={element.age}
-                    // height={element.height
-                    element={element}
+  if (isFetching) {
+    return <h3>Smurf is fetching ... :)</h3>
+  } else if (error) {
+    return <h3>{error}</h3>
+  } else {
+    return <div>
+      <button className="button" onClick={() => getSmurfs()}>GET SMURF </button>
+    
+      {smurfs.map((element, index) =>
+        <ElementCard
+          id={index}
+          isFetching={isFetching}
+          error={error}
+          isFetched={isFetched}
+          smurfs={smurfs}
+          element={element}
                     
-                 />) }
-             </div >
-    </div>     
-    }
-         
-}
-const mapDispatchToProps = {
-  //just return list of action creators here.
-  getSmurfs
-}
+        />)} </div>
+  }
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-   isFetching: state.isFetching,
-    error:state.error,
+    isFetching: state.isFetching,
+    error: state.error,
     smurfs: state.smurfs,
+<<<<<<< HEAD
     isFetched: state.isFetched,
     name: state.smurfs.name,
     age: state.smurfs.age,
     height: state.smurfs.height
   
 }   
+=======
+    isFetched: state.isFetched
+>>>>>>> a5fb833e3bcfd14f28aea112e9dcdb7253c11b51
   };
+};
+  
+const mapDispatchToProps = {
+  //just return list of action creators here.
+  getSmurfs,
+  AddSmurf
+}
 
 export default connect(
   mapStateToProps, mapDispatchToProps
